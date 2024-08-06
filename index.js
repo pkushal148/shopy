@@ -4,6 +4,7 @@ import morgan from "morgan";
 import connectDb from "./config/db.js";
 import authRoutes from "./routes/authRoutes.js";
 import sampleRoutes from "./routes/sample.js";
+import categoryRoutes from "./routes/categoryRoutes.js";
 import cors from "cors";
 
 //env setup
@@ -27,6 +28,8 @@ app.get("/", (req, res) => {
 app.use("/api/v1/auth", authRoutes);
 
 app.use("/sample", sampleRoutes);
+
+app.use("/api/v1/category", categoryRoutes);
 
 const port = process.env.PORT;
 app.listen(port, () => {
